@@ -9,6 +9,14 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
   <style>
     :root { --primary-color: #3273dc; --dark-bg: #1f242d; }
@@ -17,6 +25,8 @@
     .publication-title { font-family: 'Google Sans', sans-serif; font-weight: 800; font-size: 2.8rem; line-height: 1.2; color: #222; margin-bottom: 1.5rem; }
     .hero { background: white; padding: 4rem 0 2rem 0; }
     .author-block { font-size: 1.25rem; color: #555; }
+    .author-block a { color: var(--primary-color); text-decoration: none; }
+    .author-block a:hover { text-decoration: underline; }
     .link-block a { margin: 0.5rem; border-radius: 30px; font-weight: 600; padding: 0.6rem 1.5rem; }
     
     .section-title { font-family: 'Google Sans', sans-serif; font-weight: 700; font-size: 2.2rem; margin-bottom: 2rem; text-align: center; }
@@ -26,7 +36,7 @@
     .taxonomy-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
     
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
-    .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .video-container video, .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
     
     .result-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
     .result-table th { background: #f1f3f5; padding: 12px; border: none; }
@@ -42,8 +52,10 @@
     <div class="container is-max-desktop">
       <h1 class="publication-title">Towards Grounded In-Situ Guidance for Robotic Manipulation</h1>
       <div class="author-block">
-        <strong>Anonymous CVPR 2026 Submission</strong><br>
-        <span class="has-text-weight-semibold">Paper ID: 38621</span>
+        <a href="./">Seonho Kim</a>,
+        <a href="./">Junhyeong Hong</a>,
+        <a href="./">Kyungjae Lee</a>,
+        <a href="./">Yoonseon Oh</a>
       </div>
       <div class="link-block mt-5">
         <a href="#" class="button is-dark is-rounded"><span><i class="fas fa-file-pdf mr-2"></i>Paper</span></a>
@@ -56,9 +68,12 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="video-container">
-        <video autoplay muted loop playsinline>
-          <source src="teaser_main.mp4" type="video/mp4">
-        </video>
+        <iframe src="https://www.youtube-nocookie.com/embed/ZK3O402wf1c?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=ZK3O402wf1c&amp;controls=1&amp;rel=0&amp;playsinline=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
       </div>
       <p class="has-text-centered mt-4 is-size-5 has-text-grey-dark">
         We formalize the task of <strong>"In-situ Guide Grounding"</strong>: a robot's ability to interpret symbols 
@@ -119,26 +134,25 @@
       </div>
     </div>
   </section>
-  [Image of the taxonomy of in-situ guides for robotic manipulation]
 
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="section-title">Diagnostic Task Suite</h2>
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <img src="fig_cabinet.png" alt="Cabinet Task" class="teaser-video">
+          <img src="imgs/cabinet.jpg" alt="Cabinet Task" class="teaser-video">
           <p class="is-size-6 mt-2"><strong>Task A: Selection</strong></p>
         </div>
         <div class="column has-text-centered">
-          <img src="fig_door.png" alt="Door Task" class="teaser-video">
+          <img src="imgs/door.jpg" alt="Door Task" class="teaser-video">
           <p class="is-size-6 mt-2"><strong>Task B: Multi-step</strong></p>
         </div>
         <div class="column has-text-centered">
-          <img src="fig_bottle_std.png" alt="Bottle Task" class="teaser-video">
+          <img src="imgs/bottle-standard.jpg" alt="Bottle Task" class="teaser-video">
           <p class="is-size-6 mt-2"><strong>Task C: Directional</strong></p>
         </div>
         <div class="column has-text-centered">
-          <img src="fig_bottle_sqz.png" alt="Squeeze Task" class="teaser-video">
+          <img src="imgs/bottle-squeeze.jpg" alt="Squeeze Task" class="teaser-video">
           <p class="is-size-6 mt-2"><strong>Task D: Constrained</strong></p>
         </div>
       </div>
@@ -154,10 +168,10 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
             <h3 class="title is-4">Overall Task Success Rates</h3>
-            <img src="overall_performance.png" alt="Overall Success Rate Graph" style="max-width: 80%;"> 
+            <img src="imgs/task_sr_graph.png" alt="Overall Success Rate Graph" style="width: 100%; max-width: 100%;">
             <p class="is-size-6 has-text-grey-dark mt-3">
-              $\pi_0$, GROOT N1.5, SmolVLA 등 최신 VLA 모델들을 대상으로 한 전체 성능 비교입니다. 
-              시각 가이드(G-VLA)만으로는 성능 향상이 미미하지만, 언어 지시(LI-VLA)가 추가될 때 성공률이 최대 24.3%까지 크게 상승하는 것을 볼 수 있습니다. [cite: 907, 912]
+              Overall performance comparison across recent VLA models including $\pi_0$, GR00T N1.5, and SmolVLA.
+              Visual guides alone (G-VLA) yield only marginal gains, but adding language instructions (LI-VLA) boosts success rates by up to 24.3%.
             </p>
           </div>
         </div>
@@ -185,7 +199,7 @@
                 <td class="has-text-centered">9.2</td>
               </tr>
               <tr>
-                <td class="has-text-centered">GROOT N1.5</td>
+                <td class="has-text-centered">GR00T N1.5</td>
                 <td class="has-text-centered">8.7</td>
                 <td class="has-text-centered">27.2</td>
                 <td class="has-text-centered">24.5</td>
@@ -198,15 +212,40 @@
                 <td class="has-text-centered">52.8</td>
               </tr>
               <tr>
-                <td class="has-text-centered">GROOT N1.5</td>
+                <td class="has-text-centered">GR00T N1.5</td>
                 <td class="has-text-centered">58.3</td>
                 <td class="has-text-centered">44.4</td>
                 <td class="has-text-centered">69.4</td>
               </tr>
+              <tr>
+                <td rowspan="2" class="has-text-centered" style="vertical-align: middle;"><strong>Bottle (Directional)</strong></td>
+                <td class="has-text-centered">$\pi_0$</td>
+                <td class="has-text-centered">14.2</td>
+                <td class="has-text-centered">20.2</td>
+                <td class="has-text-centered">16.5</td>
+              </tr>
+              <tr>
+                <td class="has-text-centered">GR00T N1.5</td>
+                <td class="has-text-centered">21.9</td>
+                <td class="has-text-centered">26.7</td>
+                <td class="has-text-centered">21.5</td>
+              </tr>
+              <tr>
+                <td rowspan="2" class="has-text-centered" style="vertical-align: middle;"><strong>Bottle Squeeze (Constrained)</strong></td>
+                <td class="has-text-centered">$\pi_0$</td>
+                <td class="has-text-centered">6.2</td>
+                <td class="has-text-centered">8.8</td>
+                <td class="has-text-centered">6.9</td>
+              </tr>
+              <tr>
+                <td class="has-text-centered">GR00T N1.5</td>
+                <td class="has-text-centered">4.4</td>
+                <td class="has-text-centered">1.9</td>
+                <td class="has-text-centered">16.9</td>
+              </tr>
             </tbody>
-          </table> [cite: 1420]
+          </table>
         </div>
-        <p class="is-size-7 has-text-grey">※ . [cite7]</p>
       </div>
     </div>
   </section>
@@ -215,12 +254,16 @@
     <div class="container is-max-desktop">
       <h2 class="section-title">Real-World Validation</h2>
       <div class="content-box">
+        <div class="has-text-centered mb-5">
+          <img src="imgs/real_exp.png" alt="Real-world robotic arm experiment setup" style="max-width: 55%; border-radius: 10px;">
+          <p class="is-size-7 has-text-grey mt-2">Real-world experimental setup with a 7-DoF robotic arm.</p>
+        </div>
         <div class="columns is-vcentered">
           <div class="column is-6">
             <p class="is-size-6">
-              We validated our findings using a 7-DoF robotic arm. Simulation weights were fine-tuned via <strong>LoRA</strong> 
-              on a small real-world dataset (15 trajectories/task). 
-              The performance gap between visual-only (G-VLA) and language-instructed (LI-VLA) settings 
+              We validated our findings using a 7-DoF robotic arm. Simulation weights were fine-tuned via <strong>LoRA</strong>
+              on a small real-world dataset (15 trajectories/task).
+              The performance gap between visual-only (G-VLA) and language-instructed (LI-VLA) settings
               persists, confirming the challenge of interpreting embedded guides in the wild.
             </p>
           </div>
@@ -238,13 +281,12 @@
       </div>
     </div>
   </section>
-  [Image of a real-world robotic arm experiment setup for manipulation]
 
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="section-title">Experimental Insights</h2>
       <div class="has-text-centered">
-        <img src="overall_results.png" alt="Success Rates" style="max-width: 80%; border-radius: 10px;">
+        <img src="imgs/overall_sr.png" alt="Success Rates" style="max-width: 55%; border-radius: 10px;">
         <div class="content mt-5 is-size-6 has-text-justified">
           <ul>
             <li><strong>Perception Bottleneck:</strong> Models struggle to ground directional and procedural information from raw visual input alone.</li>
