@@ -21,7 +21,11 @@
   <style>
     :root { --primary-color: #3273dc; --dark-bg: #1f242d; }
     body { font-family: 'Noto Sans', sans-serif; background-color: #fafafa; color: #363636; }
-    .nav-header { background: white; border-bottom: 1px solid #eee; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+    .nav-header { background: white; border-bottom: 1px solid #eee; padding: 0.75rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .nav-header .nav-brand { font-family: 'Google Sans', sans-serif; font-weight: 800; font-size: 1rem; color: #222; text-decoration: none; }
+    .nav-header .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+    .nav-header .nav-links a { font-size: 0.88rem; font-weight: 600; color: #555; text-decoration: none; transition: color 0.15s; }
+    .nav-header .nav-links a:hover { color: var(--primary-color); }
     .publication-title { font-family: 'Google Sans', sans-serif; font-weight: 800; font-size: 2.8rem; line-height: 1.2; color: #222; margin-bottom: 1.5rem; }
     .hero { background: white; padding: 4rem 0 2rem 0; }
     .author-block { font-size: 1.25rem; color: #555; }
@@ -44,6 +48,21 @@
     .highlight-row { background: #eef4ff !important; font-weight: 700; }
 
     footer { background: var(--dark-bg); color: white; padding: 3rem 0; margin-top: 5rem; }
+
+    /* Task Suite cards */
+    .task-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; height: 100%; }
+    .task-card:hover { transform: translateY(-4px); box-shadow: 0 14px 35px rgba(0,0,0,0.12); }
+    .task-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .task-card .task-card-body { padding: 1rem 1.2rem 1.2rem; }
+    .task-card .task-name { font-family: 'Google Sans', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #222; }
+    .task-card .task-desc { font-size: 0.8rem; color: #666; margin-bottom: 0.7rem; line-height: 1.5; }
+    .task-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .task-tag { font-size: 0.68rem; font-weight: 700; border-radius: 20px; padding: 0.15rem 0.6rem; }
+    .tag-affordance  { background: #dbeafe; color: #1e40af; }
+    .tag-directional { background: #fef3c7; color: #92400e; }
+    .tag-procedural  { background: #d1fae5; color: #065f46; }
+    .tag-inpart      { background: #ccfbf1; color: #0f766e; }
+    .tag-disambig    { background: #ede9fe; color: #5b21b6; }
 
     /* HuggingFace dataset button dropdown */
     .hf-btn-wrapper { position: relative; display: inline-block; }
@@ -148,6 +167,20 @@
 </head>
 <body>
 
+  <nav class="nav-header">
+    <div class="container is-max-desktop" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="#" class="nav-brand">INSIGHT Bench</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#taxonomy">Taxonomy</a>
+        <a href="#tasks">Task Suite</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#results">Results</a>
+        <a href="#realworld">Real-World</a>
+      </div>
+    </div>
+  </nav>
+
   <section class="hero has-text-centered">
     <div class="container is-max-desktop">
       <div class="mb-4">
@@ -219,7 +252,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="abstract" class="section" style="background:#f5f7fa;">
     <div class="container is-max-desktop">
       <div class="content-box">
         <h2 class="title is-3 has-text-centered">Abstract</h2>
@@ -230,7 +263,7 @@
     </div>
   </section>
 
-  <section class="section" style="background:#f8faff;">
+  <section class="section" style="background:white;">
     <div class="container is-max-desktop">
       <h2 class="section-title">Core Contributions</h2>
       <div class="columns is-multiline">
@@ -262,7 +295,7 @@
     </div>
   </section>
 
-  <section class="section has-background-white">
+  <section id="taxonomy" class="section" style="background:#f5f7fa;">
     <div class="container is-max-desktop">
       <h2 class="section-title">A New Taxonomy of In-Situ Guides</h2>
       <div class="columns is-multiline">
@@ -325,32 +358,70 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="tasks" class="section" style="background:white;">
     <div class="container is-max-desktop">
       <h2 class="section-title">Task Suite</h2>
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <img src="imgs/cabinet.jpg" alt="Cabinet Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Cabinet Task</strong></p>
+      <div class="columns">
+        <div class="column">
+          <div class="task-card">
+            <img src="imgs/cabinet.jpg" alt="Cabinet Task">
+            <div class="task-card-body">
+              <p class="task-name">Cabinet Task</p>
+              <p class="task-desc">Select the correct handle from multiple candidates guided by an in-situ arrow.</p>
+              <div class="task-tags">
+                <span class="task-tag tag-affordance">Contact Affordance</span>
+                <span class="task-tag tag-disambig">Target Disambiguation</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="column has-text-centered">
-          <img src="imgs/door.jpg" alt="Door Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Door Task</strong></p>
+        <div class="column">
+          <div class="task-card">
+            <img src="imgs/door.jpg" alt="Door Task">
+            <div class="task-card-body">
+              <p class="task-name">Door Task</p>
+              <p class="task-desc">Rotate the handle in the correct direction, then push or pull the door.</p>
+              <div class="task-tags">
+                <span class="task-tag tag-affordance">Contact Affordance</span>
+                <span class="task-tag tag-directional">Action Directional</span>
+                <span class="task-tag tag-procedural">Procedural Guidance</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="column has-text-centered">
-          <img src="imgs/bottle-standard.jpg" alt="Bottle Standard Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Bottle-Standard Task</strong></p>
+        <div class="column">
+          <div class="task-card">
+            <img src="imgs/bottle-standard.jpg" alt="Bottle-Standard Task">
+            <div class="task-card-body">
+              <p class="task-name">Bottle-Standard Task</p>
+              <p class="task-desc">Open or close a bottle cap by rotating in the direction indicated by on-cap arrows.</p>
+              <div class="task-tags">
+                <span class="task-tag tag-affordance">Contact Affordance</span>
+                <span class="task-tag tag-directional">Action Directional</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="column has-text-centered">
-          <img src="imgs/bottle-squeeze.jpg" alt="Bottle Squeeze Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Bottle-Squeeze Task</strong></p>
+        <div class="column">
+          <div class="task-card">
+            <img src="imgs/bottle-squeeze.jpg" alt="Bottle-Squeeze Task">
+            <div class="task-card-body">
+              <p class="task-name">Bottle-Squeeze Task</p>
+              <p class="task-desc">Squeeze the cap at marked pressure points, then rotate to unlock a child-proof bottle.</p>
+              <div class="task-tags">
+                <span class="task-tag tag-affordance">Contact Affordance</span>
+                <span class="task-tag tag-inpart">In-Part Contact Spec.</span>
+                <span class="task-tag tag-procedural">Procedural Guidance</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== DATASET SECTION ===== -->
-  <section class="section" style="background:#fffbf2;">
+  <section id="dataset" class="section" style="background:#fffbf2;">
     <div class="container is-max-desktop">
       <h2 class="section-title">Dataset</h2>
       <p class="has-text-centered is-size-6 mb-6" style="color:#555;">
@@ -403,7 +474,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="results" class="section" style="background:#f5f7fa;">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Simulation Results & Analysis</h2>
       
@@ -431,7 +502,7 @@
     </div>
   </section>
   
-  <section class="section has-background-light">
+  <section id="realworld" class="section" style="background:white;">
     <div class="container is-max-desktop">
       <h2 class="section-title">Real-World Validation</h2>
       <div class="content-box">
@@ -469,7 +540,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" style="background:#f5f7fa;">
     <div class="container is-max-desktop">
       <h2 class="section-title">Key Findings</h2>
       <div class="columns">
@@ -498,7 +569,7 @@
     </div>
   </section>
 
-  <section class="section has-background-light">
+  <section class="section" style="background:white;">
     <div class="container is-max-desktop">
       <h2 class="section-title">Citation</h2>
       <div class="content-box">
