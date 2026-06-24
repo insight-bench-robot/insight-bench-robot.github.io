@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic ManipulaTion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Page | Submission ID #38621</title>
+  <title>INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic ManipulaTion</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -44,23 +44,160 @@
     .highlight-row { background: #eef4ff !important; font-weight: 700; }
 
     footer { background: var(--dark-bg); color: white; padding: 3rem 0; margin-top: 5rem; }
+
+    /* HuggingFace dataset button dropdown */
+    .hf-btn-wrapper { position: relative; display: inline-block; }
+    .hf-btn-wrapper .hf-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      min-width: 270px;
+      z-index: 200;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+    .hf-btn-wrapper:hover .hf-dropdown { display: block; }
+    .hf-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px; height: 12px;
+      background: white;
+      border-left: 1px solid #eee;
+      border-top: 1px solid #eee;
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .hf-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.2rem;
+      color: #363636;
+      text-decoration: none;
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.15s;
+    }
+    .hf-dropdown a:last-child { border-bottom: none; }
+    .hf-dropdown a:hover { background: #f8faff; color: #3273dc; }
+    .hf-dropdown .hf-ds-name { font-weight: 700; font-size: 0.88rem; }
+    .hf-dropdown .hf-ds-desc { font-size: 0.75rem; color: #888; }
+
+    /* HuggingFace section banner */
+    .hf-banner-wrapper { position: relative; display: inline-block; }
+    .hf-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #ff9d00, #ffcc00);
+      color: #1a1a1a;
+      border-radius: 16px;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255,160,0,0.3);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .hf-banner:hover { box-shadow: 0 10px 30px rgba(255,160,0,0.45); transform: translateY(-2px); }
+    .hf-banner-wrapper .hf-section-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.15);
+      min-width: 320px;
+      z-index: 200;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+    .hf-banner-wrapper:hover .hf-section-dropdown { display: block; }
+    .hf-section-dropdown a {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1.4rem;
+      color: #363636;
+      text-decoration: none;
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.15s;
+    }
+    .hf-section-dropdown a:last-child { border-bottom: none; }
+    .hf-section-dropdown a:hover { background: #fffbf0; }
+    .hf-section-dropdown .ds-name { font-weight: 700; font-size: 0.95rem; color: #222; }
+    .hf-section-dropdown .ds-tag {
+      display: inline-block;
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+      background: #fff3cd;
+      color: #856404;
+      border-radius: 20px;
+      padding: 0.1rem 0.6rem;
+      font-weight: 600;
+    }
+    .hf-section-dropdown .ds-desc { font-size: 0.8rem; color: #888; margin-top: 0.2rem; }
   </style>
 </head>
 <body>
 
   <section class="hero has-text-centered">
     <div class="container is-max-desktop">
-      <h1 class="publication-title">Towards Grounded In-Situ Guidance for Robotic Manipulation</h1>
-      <div class="author-block">
-        <a href="mailto:paragon7060@hanyang.ac.kr">Seonho Kim</a>,
-        <a href="./">Junhyeong Hong</a>,
-        <a href="./">Kyungjae Lee</a>,
-        <a href="./">Yoonseon Oh</a>
+      <div class="mb-4">
+        <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Kim_INSIGHT_Bench_Towards_Grounded_IN-SItu_Guidance_for_Robotic_ManipulaTion_CVPR_2026_paper.html" target="_blank"
+           style="display:inline-block; background:linear-gradient(135deg,#1565c0,#1e88e5); color:white; font-weight:700; font-size:1rem; border-radius:30px; padding:0.5rem 1.4rem; text-decoration:none; letter-spacing:0.5px; box-shadow:0 4px 14px rgba(21,101,192,0.35);">
+          CVPR 2026
+        </a>
       </div>
-      <div class="link-block mt-5">
-        <a href="#" class="button is-dark is-rounded"><span><i class="fas fa-file-pdf mr-2"></i>Paper</span></a>
+      <h1 class="publication-title">INSIGHT Bench: Towards Grounded <span style="text-decoration:underline;text-decoration-color:#3273dc;text-underline-offset:4px;">IN-SI</span>tu <span style="text-decoration:underline;text-decoration-color:#3273dc;text-underline-offset:4px;">G</span>uidance for Robotic <span style="text-decoration:underline;text-decoration-color:#3273dc;text-underline-offset:4px;">Ma</span>nipula<span style="text-decoration:underline;text-decoration-color:#3273dc;text-underline-offset:4px;">T</span>ion</h1>
+      <div class="author-block">
+        <a href="mailto:paragon7060@hanyang.ac.kr">Seonho Kim</a><sup>1</sup>,&nbsp;
+        <a href="mailto:junhyeongg@hanyang.ac.kr">Junhyeong Hong</a><sup>1</sup>,&nbsp;
+        <a href="mailto:kyungjae_lee@korea.ac.kr">Kyungjae Lee</a><sup>2*</sup>,&nbsp;
+        <a href="mailto:yoh21@hanyang.ac.kr">Yoonseon Oh</a><sup>1*</sup>
+      </div>
+      <div class="mt-3" style="color:#777; font-size:1rem;">
+        <sup>1</sup> Hanyang University &nbsp;&nbsp; <sup>2</sup> Korea University
+      </div>
+      <div class="mt-1" style="color:#999; font-size:0.85rem;">
+        <sup>*</sup> Corresponding authors
+      </div>
+      <div class="link-block mt-5" style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.25rem;">
+        <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Kim_INSIGHT_Bench_Towards_Grounded_IN-SItu_Guidance_for_Robotic_ManipulaTion_CVPR_2026_paper.html" target="_blank" class="button is-dark is-rounded"><span><i class="fas fa-file-pdf mr-2"></i>Paper</span></a>
         <a href="https://www.youtube.com/watch?v=C6h8OfpjipM" target="_blank" class="button is-dark is-rounded"><span><i class="fas fa-video mr-2"></i>Video</span></a>
         <a href="#" class="button is-dark is-rounded"><span><i class="fab fa-github mr-2"></i>Code (Coming Soon)</span></a>
+        <div class="hf-btn-wrapper">
+          <button class="button is-rounded" style="background:#ffcc00; color:#1a1a1a; font-weight:700; border:none; margin:0.5rem;">
+            <span>🤗&nbsp;Dataset&nbsp;<i class="fas fa-chevron-down" style="font-size:0.7em;"></i></span>
+          </button>
+          <div class="hf-dropdown">
+            <a href="https://huggingface.co/datasets/paragon7060/INSIGHTposrand" target="_blank">
+              <div>
+                <div class="hf-ds-name">INSIGHTposrand</div>
+                <div class="hf-ds-desc">Random Position</div>
+              </div>
+            </a>
+            <a href="https://huggingface.co/datasets/paragon7060/INSIGHTposrand_color" target="_blank">
+              <div>
+                <div class="hf-ds-name">INSIGHTposrand_color</div>
+                <div class="hf-ds-desc">Random Position (Color Augmented)</div>
+              </div>
+            </a>
+            <a href="https://huggingface.co/datasets/paragon7060/INSIGHTfixposV3" target="_blank">
+              <div>
+                <div class="hf-ds-name">INSIGHTfixposV3</div>
+                <div class="hf-ds-desc">Fixed Position</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -87,11 +224,39 @@
       <div class="content-box">
         <h2 class="title is-3 has-text-centered">Abstract</h2>
         <div class="content is-size-6 has-text-justified">
-          Humans intuitively use on-object guides (e.g., "PULL", "Squeeze and Turn") to interact with environments. 
-          Our work introduces a diagnostic benchmark evaluating how VLA models ground these cues. 
-          Through <strong>14k+ Expert Trajectories</strong> across five taxonomy categories, 
-          we show that while models succeed in simple selection, grounding directional and procedural guidance 
-          remains a major perception bottleneck.
+          Humans intuitively rely on text and symbols inscribed on objects (e.g. "PULL", "Squeeze and Turn") to perform tasks safely and correctly. In contrast, vision-language-action models excel at following external language commands, but remain largely unaware of this object-centric information. This capability is essential for reliable robotic operation, yet progress remains unmeasured due to the absence of standardized benchmarks. To address this gap, we introduce <strong>INSIGHT Bench</strong>, a benchmark that formalizes the task of <em>"in-situ guide grounding"</em>. INSIGHT Bench provides a comprehensive taxonomy that evaluates how agents utilize diverse guide information, including action-direction cues and procedural instructions. It also includes a scalable simulation framework that procedurally generates tasks and programmatically links each visual guide to its corresponding physical constraint. We release both the benchmark and the resulting trajectory dataset to support future research. Our evaluation of recent VLA models reveals a critical limitation: their ability to ground in-situ guides is inconsistent and strongly dependent on the type of information. While models succeed on some guide categories, they frequently fail on others. However, performance improves substantially when the same information is provided as language instructions, indicating that in-situ guides could contribute to manipulation performance if VLAs were capable of interpreting them. These findings underscore the need for further research on understanding and grounding in-situ guides.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8faff;">
+    <div class="container is-max-desktop">
+      <h2 class="section-title">Core Contributions</h2>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="box" style="border-left:5px solid #3273dc; height:100%;">
+            <p class="title is-6 mb-2">📐 Formalization &amp; Taxonomy</p>
+            <p class="is-size-6">We introduce and formalize the task of <em>in-situ instruction grounding</em>, along with a new taxonomy for categorizing the information that guides embedded on objects can provide.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="box" style="border-left:5px solid #3273dc; height:100%;">
+            <p class="title is-6 mb-2">🏆 New Benchmark Paradigm</p>
+            <p class="is-size-6">INSIGHT Bench is the first benchmark that grounds in-situ guides into manipulation via <em>guide-conditioned physical constraints</em>, enabling rigorous evaluation.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="box" style="border-left:5px solid #3273dc; height:100%;">
+            <p class="title is-6 mb-2">🗄️ Large-Scale Dataset &amp; Generation Framework</p>
+            <p class="is-size-6">We propose a scalable data generation framework that procedurally synthesizes guides onto diverse objects and automatically generates corresponding task trajectories (14k+ expert trajectories).</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="box" style="border-left:5px solid #3273dc; height:100%;">
+            <p class="title is-6 mb-2">🔬 Analysis of Recent VLA Models</p>
+            <p class="is-size-6">Through extensive experiments on recent VLAs ($\pi_0$, GR00T N1.5, SmolVLA), we demonstrate clear limitations in their precise and compositional reasoning of embedded guides.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -103,32 +268,57 @@
       <div class="columns is-multiline">
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <h3 class="title is-5 mb-2">01. Contact Affordance</h3>
-            <p class="is-size-7">Identifying which component is intended for interaction.</p>
+            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
+              <!-- img src="imgs/taxonomy_01_contact_affordance.png" alt="Contact Affordance" style="width:100%;height:100%;object-fit:cover;" -->
+              <span class="has-text-grey is-size-7">Image: Contact Affordance</span>
+            </div>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 01</p>
+            <h3 class="title is-5 mb-2">Contact Affordance Information</h3>
+            <p class="is-size-7">Signals <em>which</em> component is intended for interaction. A guide located near a specific part identifies the primary interaction point, even when geometry alone is ambiguous (e.g., a "PUSH" label on a door panel).</p>
           </div>
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <h3 class="title is-5 mb-2">02. In-Part Specification</h3>
-            <p class="is-size-7">Detailing precise contact points (e.g., squeeze arrows).</p>
+            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
+              <!-- img src="imgs/taxonomy_02_inpart_contact.png" alt="In-Part Contact Specification" style="width:100%;height:100%;object-fit:cover;" -->
+              <span class="has-text-grey is-size-7">Image: In-Part Contact Spec.</span>
+            </div>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 02</p>
+            <h3 class="title is-5 mb-2">In-Part Contact Specification</h3>
+            <p class="is-size-7">Details the precise contact points or orientation on the part itself. For example, squeeze arrows on a child-proof bottle indicate specific pressure points required to disengage a safety mechanism.</p>
           </div>
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <h3 class="title is-5 mb-2">03. Action Directional</h3>
-            <p class="is-size-7">Constraints on motion like CW/CCW rotation or push/pull.</p>
+            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
+              <!-- img src="imgs/taxonomy_03_action_directional.png" alt="Action Directional" style="width:100%;height:100%;object-fit:cover;" -->
+              <span class="has-text-grey is-size-7">Image: Action Directional</span>
+            </div>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 03</p>
+            <h3 class="title is-5 mb-2">Action Directional Information</h3>
+            <p class="is-size-7">Imposes constraints on manipulation execution by restricting the robot's motion space. Examples include CW/CCW rotation arrows on a bottle cap or "PUSH"/"PULL" labels on a door handle.</p>
           </div>
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <h3 class="title is-5 mb-2">04. Procedural Guidance</h3>
-            <p class="is-size-7">Multi-step operational sequences (e.g., "Rotate then Pull").</p>
+            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
+              <!-- img src="imgs/taxonomy_04_procedural.png" alt="Procedural Guidance" style="width:100%;height:100%;object-fit:cover;" -->
+              <span class="has-text-grey is-size-7">Image: Procedural Guidance</span>
+            </div>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 04</p>
+            <h3 class="title is-5 mb-2">Procedural Guidance Information</h3>
+            <p class="is-size-7">Specifies the required sequence for multi-step operations. Labels such as "Rotate handle and Pull door" define the requisite order of actions that must be followed to complete the task.</p>
           </div>
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <h3 class="title is-5 mb-2">05. Target Disambiguation</h3>
-            <p class="is-size-7">Resolving goals among multiple candidate parts.</p>
+            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
+              <!-- img src="imgs/taxonomy_05_disambiguation.png" alt="Target Disambiguation" style="width:100%;height:100%;object-fit:cover;" -->
+              <span class="has-text-grey is-size-7">Image: Target Disambiguation</span>
+            </div>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 05</p>
+            <h3 class="title is-5 mb-2">Target Disambiguation Information</h3>
+            <p class="is-size-7">Resolves ambiguity when multiple candidate parts afford interaction. For example, if several drawers are present but only the top drawer is marked, the guide specifies the correct target.</p>
           </div>
         </div>
       </div>
@@ -137,28 +327,81 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="section-title">Diagnostic Task Suite</h2>
+      <h2 class="section-title">Task Suite</h2>
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <img src="imgs/cabinet.jpg" alt="Cabinet Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Task A: Selection</strong></p>
+          <p class="is-size-6 mt-2"><strong>Cabinet Task</strong></p>
         </div>
         <div class="column has-text-centered">
           <img src="imgs/door.jpg" alt="Door Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Task B: Multi-step</strong></p>
+          <p class="is-size-6 mt-2"><strong>Door Task</strong></p>
         </div>
         <div class="column has-text-centered">
-          <img src="imgs/bottle-standard.jpg" alt="Bottle Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Task C: Directional</strong></p>
+          <img src="imgs/bottle-standard.jpg" alt="Bottle Standard Task" class="teaser-video">
+          <p class="is-size-6 mt-2"><strong>Bottle-Standard Task</strong></p>
         </div>
         <div class="column has-text-centered">
-          <img src="imgs/bottle-squeeze.jpg" alt="Squeeze Task" class="teaser-video">
-          <p class="is-size-6 mt-2"><strong>Task D: Constrained</strong></p>
+          <img src="imgs/bottle-squeeze.jpg" alt="Bottle Squeeze Task" class="teaser-video">
+          <p class="is-size-6 mt-2"><strong>Bottle-Squeeze Task</strong></p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== DATASET SECTION ===== -->
+  <section class="section" style="background:#fffbf2;">
+    <div class="container is-max-desktop">
+      <h2 class="section-title">Dataset</h2>
+      <p class="has-text-centered is-size-6 mb-6" style="color:#555;">
+        Over <strong>14,000 expert trajectories</strong> across 4 task categories, procedurally generated and publicly available.
+        Two guide placement variants (random / fixed position) with optional color augmentation.
+      </p>
+
+      <!-- HuggingFace Banner with hover dropdown -->
+      <div class="has-text-centered mb-6">
+        <div class="hf-banner-wrapper" style="display:inline-block;">
+          <div class="hf-banner">
+            <span style="font-size:1.5rem;">🤗</span>
+            <span>Available on HuggingFace</span>
+            <i class="fas fa-chevron-down" style="font-size:0.85rem; opacity:0.7;"></i>
+          </div>
+          <div class="hf-section-dropdown">
+            <a href="https://huggingface.co/datasets/paragon7060/INSIGHTposrand" target="_blank">
+              <span class="ds-name">INSIGHTposrand</span>
+              <span class="ds-tag">Random Position</span>
+              <span class="ds-desc">Standard variant with randomized guide placement</span>
+            </a>
+            <a href="https://huggingface.co/datasets/paragon7060/INSIGHTposrand_color" target="_blank">
+              <span class="ds-name">INSIGHTposrand_color</span>
+              <span class="ds-tag">Random Position + Color Aug.</span>
+              <span class="ds-desc">Random position with color augmentation</span>
+            </a>
+            <a href="https://huggingface.co/datasets/paragon7060/INSIGHTfixposV3" target="_blank">
+              <span class="ds-name">INSIGHTfixposV3</span>
+              <span class="ds-tag">Fixed Position</span>
+              <span class="ds-desc">Guide placement fixed at canonical location</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Example Video -->
+      <div class="content-box">
+        <h3 class="title is-4 has-text-centered mb-4">Data Examples</h3>
+        <div id="data-example-video-placeholder" style="background:#f5f5f5; border-radius:12px; padding:4rem 2rem; text-align:center; border:2px dashed #ddd; color:#aaa;">
+          🎬 Data example video (coming soon)
+        </div>
+        <!-- Once video file is provided, replace the placeholder above with:
+        <div class="video-container">
+          <video controls muted loop>
+            <source src="videos/data_example.mp4" type="video/mp4">
+          </video>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -168,84 +411,22 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
             <h3 class="title is-4">Overall Task Success Rates</h3>
-            <img src="imgs/task_sr_graph.png" alt="Overall Success Rate Graph" style="width: 100%; max-width: 100%;">
+            <img src="imgs/overall_sr.png" alt="Overall Success Rate Graph" style="width: 100%; max-width: 80%;">
             <p class="is-size-6 has-text-grey-dark mt-3">
               Overall performance comparison across recent VLA models including $\pi_0$, GR00T N1.5, and SmolVLA.
               Visual guides alone (G-VLA) yield only marginal gains, but adding language instructions (LI-VLA) boosts success rates by up to 24.3%.
             </p>
           </div>
         </div>
-  
+
         <hr>
-  
-        <h3 class="title is-4 has-text-centered">Per-Task Success Rate Details (%)</h3>
-        <div class="table-container">
-          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-            <thead>
-              <tr class="has-background-link-light">
-                <th class="has-text-centered">Task Category</th>
-                <th class="has-text-centered">Model</th>
-                <th class="has-text-centered">NG (No-Guide)</th>
-                <th class="has-text-centered">G (Guided)</th>
-                <th class="has-text-centered">LI (Language)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td rowspan="2" class="has-text-centered" style="vertical-align: middle;"><strong>Cabinet (Selection)</strong></td>
-                <td class="has-text-centered">$\pi_0$</td>
-                <td class="has-text-centered">6.0</td>
-                <td class="has-text-centered">9.8</td>
-                <td class="has-text-centered">9.2</td>
-              </tr>
-              <tr>
-                <td class="has-text-centered">GR00T N1.5</td>
-                <td class="has-text-centered">8.7</td>
-                <td class="has-text-centered">27.2</td>
-                <td class="has-text-centered">24.5</td>
-              </tr>
-              <tr>
-                <td rowspan="2" class="has-text-centered" style="vertical-align: middle;"><strong>Door (Procedural)</strong></td>
-                <td class="has-text-centered">$\pi_0$</td>
-                <td class="has-text-centered">31.9</td>
-                <td class="has-text-centered">8.3</td>
-                <td class="has-text-centered">52.8</td>
-              </tr>
-              <tr>
-                <td class="has-text-centered">GR00T N1.5</td>
-                <td class="has-text-centered">58.3</td>
-                <td class="has-text-centered">44.4</td>
-                <td class="has-text-centered">69.4</td>
-              </tr>
-              <tr>
-                <td rowspan="2" class="has-text-centered" style="vertical-align: middle;"><strong>Bottle (Directional)</strong></td>
-                <td class="has-text-centered">$\pi_0$</td>
-                <td class="has-text-centered">14.2</td>
-                <td class="has-text-centered">20.2</td>
-                <td class="has-text-centered">16.5</td>
-              </tr>
-              <tr>
-                <td class="has-text-centered">GR00T N1.5</td>
-                <td class="has-text-centered">21.9</td>
-                <td class="has-text-centered">26.7</td>
-                <td class="has-text-centered">21.5</td>
-              </tr>
-              <tr>
-                <td rowspan="2" class="has-text-centered" style="vertical-align: middle;"><strong>Bottle Squeeze (Constrained)</strong></td>
-                <td class="has-text-centered">$\pi_0$</td>
-                <td class="has-text-centered">6.2</td>
-                <td class="has-text-centered">8.8</td>
-                <td class="has-text-centered">6.9</td>
-              </tr>
-              <tr>
-                <td class="has-text-centered">GR00T N1.5</td>
-                <td class="has-text-centered">4.4</td>
-                <td class="has-text-centered">1.9</td>
-                <td class="has-text-centered">16.9</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+        <h3 class="title is-4 has-text-centered">Per-Task Success Rate Breakdown</h3>
+        <img src="imgs/task_sr_graph.png" alt="Per-Task Success Rate Graph" style="width: 100%; max-width: 100%; border-radius: 8px;">
+        <p class="is-size-6 has-text-grey-dark mt-3 has-text-centered">
+          Detailed per-task success rates across all four task categories under three evaluation conditions (NG-VLA, G-VLA, LI-VLA).
+        </p>
+
       </div>
     </div>
   </section>
@@ -254,6 +435,12 @@
     <div class="container is-max-desktop">
       <h2 class="section-title">Real-World Validation</h2>
       <div class="content-box">
+        <div class="has-text-centered mb-5">
+          <div id="realworld-video-placeholder" style="background:#f0f0f0; border-radius:12px; padding:3rem; color:#aaa; font-size:1rem; border:2px dashed #ccc;">
+            🎬 Real-world validation video (coming soon)
+          </div>
+          <!-- Replace placeholder with video element once file is provided -->
+        </div>
         <div class="has-text-centered mb-5">
           <img src="imgs/real_exp.png" alt="Real-world robotic arm experiment setup" style="max-width: 55%; border-radius: 10px;">
           <p class="is-size-7 has-text-grey mt-2">Real-world experimental setup with a 7-DoF robotic arm.</p>
@@ -271,8 +458,8 @@
             <table class="result-table">
               <thead><tr><th>Task</th><th>G-VLA</th><th>LI-VLA (Language)</th></tr></thead>
               <tbody>
-                <tr><td><strong>Task C (Directional)</strong></td><td>45%</td><td class="highlight-row">65%</td></tr>
-                <tr><td><strong>Task A (Selection)</strong></td><td>45%</td><td class="highlight-row">50%</td></tr>
+                <tr><td><strong>Bottle-Standard Task</strong></td><td>45%</td><td class="highlight-row">65%</td></tr>
+                <tr><td><strong>Cabinet Task</strong></td><td>45%</td><td class="highlight-row">50%</td></tr>
               </tbody>
             </table>
             <p class="is-size-7 has-text-grey mt-2 has-text-centered">Real-world success rates (10 trials per setting)</p>
@@ -285,9 +472,8 @@
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="section-title">Experimental Insights</h2>
-      <div class="has-text-centered">
-        <img src="imgs/overall_sr.png" alt="Success Rates" style="max-width: 55%; border-radius: 10px;">
-        <div class="content mt-5 is-size-6 has-text-justified">
+      <div class="content-box">
+        <div class="content is-size-6 has-text-justified">
           <ul>
             <li><strong>Perception Bottleneck:</strong> Models struggle to ground directional and procedural information from raw visual input alone.</li>
             <li><strong>Language as a Proxy:</strong> Performance jumps significantly when guides are provided as text (LI-VLA), showing the action policy itself is robust.</li>
@@ -298,10 +484,32 @@
     </div>
   </section>
 
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="section-title">Citation</h2>
+      <div class="content-box">
+        <pre style="background:#1f242d; color:#e0e0e0; border-radius:10px; padding:1.5rem; font-size:0.85rem; overflow-x:auto; white-space:pre-wrap;">@article{kim2026insightbench,
+  title     = {INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic ManipulaTion},
+  author    = {Kim, Seonho and Hong, Junhyeong and Lee, Kyungjae and Oh, Yoonseon},
+  journal   = {arXiv preprint},
+  year      = {2026}
+}</pre>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container has-text-centered">
-      <p>Anonymous Project Page for Submission ID #38621</p>
-      <p class="is-size-7 has-text-grey-light">Built with Bulma & Academic Project Template</p>
+      <p style="color:#ccc;">
+        <strong style="color:white;">INSIGHT Bench</strong> &nbsp;|&nbsp;
+        Seonho Kim, Junhyeong Hong, Kyungjae Lee, Yoonseon Oh
+      </p>
+      <p class="is-size-7 mt-2" style="color:#888;">
+        Hanyang University &amp; Korea University
+      </p>
+      <p class="is-size-7 mt-2" style="color:#666;">
+        Website built with <a href="https://bulma.io" style="color:#888;">Bulma</a>
+      </p>
     </div>
   </footer>
 
