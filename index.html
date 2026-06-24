@@ -58,7 +58,7 @@
     /* Task Suite cards */
     .task-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; height: 100%; }
     .task-card:hover { transform: translateY(-4px); box-shadow: 0 14px 35px rgba(0,0,0,0.12); }
-    .task-card img, .task-card video { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #111; }
+    .task-card img, .task-card video { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #111; cursor: pointer; }
     .task-card .task-card-body { padding: 1rem 1.2rem 1.2rem; }
     .task-card .task-name { font-family: 'Google Sans', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #222; }
     .task-card .task-desc { font-size: 0.8rem; color: #666; margin-bottom: 0.7rem; line-height: 1.5; }
@@ -365,7 +365,7 @@
       <div class="columns">
         <div class="column">
           <div class="task-card">
-            <video controls preload="metadata" playsinline>
+            <video class="task-video" muted loop preload="metadata" playsinline>
               <source src="videos/cabinet_ex.mp4" type="video/mp4">
             </video>
             <div class="task-card-body">
@@ -380,7 +380,7 @@
         </div>
         <div class="column">
           <div class="task-card">
-            <video controls preload="metadata" playsinline>
+            <video class="task-video" muted loop preload="metadata" playsinline>
               <source src="videos/door_ex.mp4" type="video/mp4">
             </video>
             <div class="task-card-body">
@@ -396,7 +396,7 @@
         </div>
         <div class="column">
           <div class="task-card">
-            <video controls preload="metadata" playsinline>
+            <video class="task-video" muted loop preload="metadata" playsinline>
               <source src="videos/bottle_ex.mp4" type="video/mp4">
             </video>
             <div class="task-card-body">
@@ -411,7 +411,7 @@
         </div>
         <div class="column">
           <div class="task-card">
-            <video controls preload="metadata" playsinline>
+            <video class="task-video" muted loop preload="metadata" playsinline>
               <source src="videos/squeeze_ex.mp4" type="video/mp4">
             </video>
             <div class="task-card-body">
@@ -420,6 +420,7 @@
               <div class="task-tags">
                 <span class="task-tag tag-affordance">Contact Affordance</span>
                 <span class="task-tag tag-inpart">In-Part Contact Spec.</span>
+                <span class="task-tag tag-directional">Action Directional</span>
                 <span class="task-tag tag-procedural">Procedural Guidance</span>
               </div>
             </div>
@@ -628,6 +629,15 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.task-card').forEach(card => {
+      const video = card.querySelector('.task-video');
+      if (!video) return;
+      card.addEventListener('mouseenter', () => video.play());
+      card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
+  </script>
 
 </body>
 </html>
