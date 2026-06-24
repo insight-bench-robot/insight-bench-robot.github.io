@@ -43,9 +43,9 @@
     
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
     .video-container video, .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-    .realworld-video { aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+    .realworld-video { aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 12px 30px rgba(0,0,0,0.12); cursor: pointer; }
     .realworld-video video { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .dataset-video { aspect-ratio: 1432 / 748; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+    .dataset-video { aspect-ratio: 1432 / 748; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 12px 30px rgba(0,0,0,0.12); cursor: pointer; }
     .dataset-video video { width: 100%; height: 100%; object-fit: contain; display: block; }
     
     .result-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
@@ -473,7 +473,7 @@
         <div class="columns">
           <div class="column">
             <div class="dataset-video">
-              <video controls preload="metadata" playsinline>
+              <video class="hover-video" muted loop preload="metadata" playsinline>
                 <source src="videos/dataset_visualize_cabinet.mp4" type="video/mp4">
               </video>
             </div>
@@ -481,7 +481,7 @@
           </div>
           <div class="column">
             <div class="dataset-video">
-              <video controls preload="metadata" playsinline>
+              <video class="hover-video" muted loop preload="metadata" playsinline>
                 <source src="videos/dataset_visualize_door.mp4" type="video/mp4">
               </video>
             </div>
@@ -527,7 +527,7 @@
         <div class="columns mb-5">
           <div class="column">
             <div class="realworld-video">
-              <video controls preload="metadata" playsinline>
+              <video class="hover-video" muted loop preload="metadata" playsinline>
                 <source src="videos/cabinet_left.mp4" type="video/mp4">
               </video>
             </div>
@@ -535,7 +535,7 @@
           </div>
           <div class="column">
             <div class="realworld-video">
-              <video controls preload="metadata" playsinline>
+              <video class="hover-video" muted loop preload="metadata" playsinline>
                 <source src="videos/cabinet_right.mp4" type="video/mp4">
               </video>
             </div>
@@ -636,6 +636,13 @@
       if (!video) return;
       card.addEventListener('mouseenter', () => video.play());
       card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
+
+    document.querySelectorAll('.realworld-video, .dataset-video').forEach(wrapper => {
+      const video = wrapper.querySelector('.hover-video');
+      if (!video) return;
+      wrapper.addEventListener('mouseenter', () => video.play());
+      wrapper.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
     });
   </script>
 
