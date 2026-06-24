@@ -38,9 +38,15 @@
     
     .taxonomy-card { border-top: 5px solid var(--primary-color); height: 100%; transition: 0.3s; }
     .taxonomy-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+    .taxonomy-img-slot { background: #fff; border-radius: 8px; height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden; border: 1px solid #edf0f5; }
+    .taxonomy-img-slot img { width: 100%; height: 100%; object-fit: contain; display: block; }
     
     .video-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
     .video-container video, .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .realworld-video { aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+    .realworld-video video { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .dataset-video { aspect-ratio: 1432 / 748; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+    .dataset-video video { width: 100%; height: 100%; object-fit: contain; display: block; }
     
     .result-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
     .result-table th { background: #f1f3f5; padding: 12px; border: none; }
@@ -52,7 +58,7 @@
     /* Task Suite cards */
     .task-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; height: 100%; }
     .task-card:hover { transform: translateY(-4px); box-shadow: 0 14px 35px rgba(0,0,0,0.12); }
-    .task-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .task-card img, .task-card video { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #111; }
     .task-card .task-card-body { padding: 1rem 1.2rem 1.2rem; }
     .task-card .task-name { font-family: 'Google Sans', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: #222; }
     .task-card .task-desc { font-size: 0.8rem; color: #666; margin-bottom: 0.7rem; line-height: 1.5; }
@@ -301,9 +307,8 @@
       <div class="columns is-multiline">
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
-              <!-- img src="imgs/taxonomy_01_contact_affordance.png" alt="Contact Affordance" style="width:100%;height:100%;object-fit:cover;" -->
-              <span class="has-text-grey is-size-7">Image: Contact Affordance</span>
+            <div class="taxonomy-img-slot">
+              <img src="imgs/taxonomy-category-1-contact-affordance.png" alt="Contact Affordance Information">
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 01</p>
             <h3 class="title is-5 mb-2">Contact Affordance Information</h3>
@@ -312,42 +317,38 @@
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
-              <!-- img src="imgs/taxonomy_02_inpart_contact.png" alt="In-Part Contact Specification" style="width:100%;height:100%;object-fit:cover;" -->
-              <span class="has-text-grey is-size-7">Image: In-Part Contact Spec.</span>
+            <div class="taxonomy-img-slot">
+              <img src="imgs/taxonomy-category-2-action-directional.png" alt="Action Directional Information">
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 02</p>
-            <h3 class="title is-5 mb-2">In-Part Contact Specification</h3>
-            <p class="is-size-7">Specifies <em>how</em> to contact the part — e.g., squeeze arrows indicating exact pressure points on a child-proof cap.</p>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="box taxonomy-card">
-            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
-              <!-- img src="imgs/taxonomy_03_action_directional.png" alt="Action Directional" style="width:100%;height:100%;object-fit:cover;" -->
-              <span class="has-text-grey is-size-7">Image: Action Directional</span>
-            </div>
-            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 03</p>
             <h3 class="title is-5 mb-2">Action Directional Information</h3>
             <p class="is-size-7">Constrains motion direction — e.g., CW/CCW arrows on a bottle cap or "PUSH"/"PULL" on a door.</p>
           </div>
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
-              <!-- img src="imgs/taxonomy_04_procedural.png" alt="Procedural Guidance" style="width:100%;height:100%;object-fit:cover;" -->
-              <span class="has-text-grey is-size-7">Image: Procedural Guidance</span>
+            <div class="taxonomy-img-slot">
+              <img src="imgs/taxonomy-category-3-procedural-guidance.png" alt="Procedural Guidance Information">
             </div>
-            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 04</p>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 03</p>
             <h3 class="title is-5 mb-2">Procedural Guidance Information</h3>
             <p class="is-size-7">Defines the required action sequence — e.g., "Rotate handle, then Pull door."</p>
           </div>
         </div>
         <div class="column is-one-third">
           <div class="box taxonomy-card">
-            <div class="taxonomy-img-slot" style="background:#f5f5f5; border-radius:8px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; overflow:hidden;">
-              <!-- img src="imgs/taxonomy_05_disambiguation.png" alt="Target Disambiguation" style="width:100%;height:100%;object-fit:cover;" -->
-              <span class="has-text-grey is-size-7">Image: Target Disambiguation</span>
+            <div class="taxonomy-img-slot">
+              <img src="imgs/taxonomy-category-4-in-part-contact.png" alt="In-Part Contact Specification Information">
+            </div>
+            <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 04</p>
+            <h3 class="title is-5 mb-2">In-Part Contact Specification</h3>
+            <p class="is-size-7">Specifies <em>how</em> to contact the part, e.g., squeeze arrows indicating exact pressure points on a child-proof cap.</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="box taxonomy-card">
+            <div class="taxonomy-img-slot">
+              <img src="imgs/taxonomy-category-5-target-disambiguation.png" alt="Target Disambiguation Information">
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 05</p>
             <h3 class="title is-5 mb-2">Target Disambiguation Information</h3>
@@ -364,7 +365,9 @@
       <div class="columns">
         <div class="column">
           <div class="task-card">
-            <img src="imgs/cabinet.jpg" alt="Cabinet Task">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/cabinet_ex.mp4" type="video/mp4">
+            </video>
             <div class="task-card-body">
               <p class="task-name">Cabinet Task</p>
               <p class="task-desc">Select the correct handle from multiple candidates guided by an in-situ arrow.</p>
@@ -377,7 +380,9 @@
         </div>
         <div class="column">
           <div class="task-card">
-            <img src="imgs/door.jpg" alt="Door Task">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/door_ex.mp4" type="video/mp4">
+            </video>
             <div class="task-card-body">
               <p class="task-name">Door Task</p>
               <p class="task-desc">Rotate the handle in the correct direction, then push or pull the door.</p>
@@ -391,7 +396,9 @@
         </div>
         <div class="column">
           <div class="task-card">
-            <img src="imgs/bottle-standard.jpg" alt="Bottle-Standard Task">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/bottle_ex.mp4" type="video/mp4">
+            </video>
             <div class="task-card-body">
               <p class="task-name">Bottle-Standard Task</p>
               <p class="task-desc">Open or close a bottle cap by rotating in the direction indicated by on-cap arrows.</p>
@@ -404,7 +411,9 @@
         </div>
         <div class="column">
           <div class="task-card">
-            <img src="imgs/bottle-squeeze.jpg" alt="Bottle-Squeeze Task">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/squeeze_ex.mp4" type="video/mp4">
+            </video>
             <div class="task-card-body">
               <p class="task-name">Bottle-Squeeze Task</p>
               <p class="task-desc">Squeeze the cap at marked pressure points, then rotate to unlock a child-proof bottle.</p>
@@ -460,16 +469,24 @@
       <!-- Data Example Video -->
       <div class="content-box">
         <h3 class="title is-4 has-text-centered mb-4">Data Examples</h3>
-        <div id="data-example-video-placeholder" style="background:#f5f5f5; border-radius:12px; padding:4rem 2rem; text-align:center; border:2px dashed #ddd; color:#aaa;">
-          🎬 Data example video (coming soon)
+        <div class="columns">
+          <div class="column">
+            <div class="dataset-video">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/dataset_visualize_cabinet.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="is-size-7 has-text-grey mt-2 has-text-centered">Cabinet Dataset Visualization</p>
+          </div>
+          <div class="column">
+            <div class="dataset-video">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/dataset_visualize_door.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="is-size-7 has-text-grey mt-2 has-text-centered">Door Dataset Visualization</p>
+          </div>
         </div>
-        <!-- Once video file is provided, replace the placeholder above with:
-        <div class="video-container">
-          <video controls muted loop>
-            <source src="videos/data_example.mp4" type="video/mp4">
-          </video>
-        </div>
-        -->
       </div>
     </div>
   </section>
@@ -506,11 +523,23 @@
     <div class="container is-max-desktop">
       <h2 class="section-title">Real-World Validation</h2>
       <div class="content-box">
-        <div class="has-text-centered mb-5">
-          <div id="realworld-video-placeholder" style="background:#f0f0f0; border-radius:12px; padding:3rem; color:#aaa; font-size:1rem; border:2px dashed #ccc;">
-            🎬 Real-world validation video (coming soon)
+        <div class="columns mb-5">
+          <div class="column">
+            <div class="realworld-video">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/cabinet_left.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="is-size-7 has-text-grey mt-2 has-text-centered">Cabinet Left</p>
           </div>
-          <!-- Replace placeholder with video element once file is provided -->
+          <div class="column">
+            <div class="realworld-video">
+              <video controls preload="metadata" playsinline>
+                <source src="videos/cabinet_right.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="is-size-7 has-text-grey mt-2 has-text-centered">Cabinet Right</p>
+          </div>
         </div>
         <div class="has-text-centered mb-5">
           <img src="imgs/real_exp.png" alt="Real-world robotic arm experiment setup" style="max-width: 55%; border-radius: 10px;">
