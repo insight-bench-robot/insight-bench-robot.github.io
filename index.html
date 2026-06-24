@@ -222,10 +222,10 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="content-box">
-        <h2 class="title is-3 has-text-centered">Abstract</h2>
-        <div class="content is-size-6 has-text-justified">
-          Humans intuitively rely on text and symbols inscribed on objects (e.g. "PULL", "Squeeze and Turn") to perform tasks safely and correctly. In contrast, vision-language-action models excel at following external language commands, but remain largely unaware of this object-centric information. This capability is essential for reliable robotic operation, yet progress remains unmeasured due to the absence of standardized benchmarks. To address this gap, we introduce <strong>INSIGHT Bench</strong>, a benchmark that formalizes the task of <em>"in-situ guide grounding"</em>. INSIGHT Bench provides a comprehensive taxonomy that evaluates how agents utilize diverse guide information, including action-direction cues and procedural instructions. It also includes a scalable simulation framework that procedurally generates tasks and programmatically links each visual guide to its corresponding physical constraint. We release both the benchmark and the resulting trajectory dataset to support future research. Our evaluation of recent VLA models reveals a critical limitation: their ability to ground in-situ guides is inconsistent and strongly dependent on the type of information. While models succeed on some guide categories, they frequently fail on others. However, performance improves substantially when the same information is provided as language instructions, indicating that in-situ guides could contribute to manipulation performance if VLAs were capable of interpreting them. These findings underscore the need for further research on understanding and grounding in-situ guides.
-        </div>
+        <h2 class="title is-3 has-text-centered">TL;DR</h2>
+        <p class="is-size-5 has-text-centered" style="line-height:1.8; color:#444; max-width:780px; margin:0 auto;">
+          Robots operating in human environments must interpret <strong>in-situ guides</strong> — text and symbols physically embedded on objects (e.g. "PULL", "Squeeze and Turn"). We introduce <strong>INSIGHT Bench</strong>, the first benchmark that formalizes this capability by linking visual guides to guide-conditioned physical constraints. Our evaluation shows that current VLA models largely <strong>fail to ground in-situ guides visually</strong>, but succeed when the same information is given as language — exposing a critical perception gap.
+        </p>
       </div>
     </div>
   </section>
@@ -236,26 +236,26 @@
       <div class="columns is-multiline">
         <div class="column is-half">
           <div class="box" style="border-left:5px solid #3273dc; height:100%;">
-            <p class="title is-6 mb-2">📐 Formalization &amp; Taxonomy</p>
-            <p class="is-size-6">We introduce and formalize the task of <em>in-situ instruction grounding</em>, along with a new taxonomy for categorizing the information that guides embedded on objects can provide.</p>
+            <p class="title is-6 mb-1">📐 Formalization &amp; Taxonomy</p>
+            <p class="is-size-6 has-text-grey-dark">A new taxonomy of 5 in-situ guide types that robots must interpret to act correctly.</p>
           </div>
         </div>
         <div class="column is-half">
           <div class="box" style="border-left:5px solid #3273dc; height:100%;">
-            <p class="title is-6 mb-2">🏆 New Benchmark Paradigm</p>
-            <p class="is-size-6">INSIGHT Bench is the first benchmark that grounds in-situ guides into manipulation via <em>guide-conditioned physical constraints</em>, enabling rigorous evaluation.</p>
+            <p class="title is-6 mb-1">🏆 New Benchmark Paradigm</p>
+            <p class="is-size-6 has-text-grey-dark">First benchmark grounding visual guides into physical constraints — not just language instructions.</p>
           </div>
         </div>
         <div class="column is-half">
           <div class="box" style="border-left:5px solid #3273dc; height:100%;">
-            <p class="title is-6 mb-2">🗄️ Large-Scale Dataset &amp; Generation Framework</p>
-            <p class="is-size-6">We propose a scalable data generation framework that procedurally synthesizes guides onto diverse objects and automatically generates corresponding task trajectories (14k+ expert trajectories).</p>
+            <p class="title is-6 mb-1">🗄️ Large-Scale Dataset</p>
+            <p class="is-size-6 has-text-grey-dark">14k+ expert trajectories auto-generated via a scalable, procedural guide-to-physics pipeline.</p>
           </div>
         </div>
         <div class="column is-half">
           <div class="box" style="border-left:5px solid #3273dc; height:100%;">
-            <p class="title is-6 mb-2">🔬 Analysis of Recent VLA Models</p>
-            <p class="is-size-6">Through extensive experiments on recent VLAs ($\pi_0$, GR00T N1.5, SmolVLA), we demonstrate clear limitations in their precise and compositional reasoning of embedded guides.</p>
+            <p class="title is-6 mb-1">🔬 VLA Model Analysis</p>
+            <p class="is-size-6 has-text-grey-dark">Reveals critical visual grounding failures in $\pi_0$, GR00T N1.5, and SmolVLA across guide types.</p>
           </div>
         </div>
       </div>
@@ -274,7 +274,7 @@
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 01</p>
             <h3 class="title is-5 mb-2">Contact Affordance Information</h3>
-            <p class="is-size-7">Signals <em>which</em> component is intended for interaction. A guide located near a specific part identifies the primary interaction point, even when geometry alone is ambiguous (e.g., a "PUSH" label on a door panel).</p>
+            <p class="is-size-7">Identifies <em>which</em> part to interact with (e.g., a "PUSH" label pointing to a specific door panel).</p>
           </div>
         </div>
         <div class="column is-one-third">
@@ -285,7 +285,7 @@
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 02</p>
             <h3 class="title is-5 mb-2">In-Part Contact Specification</h3>
-            <p class="is-size-7">Details the precise contact points or orientation on the part itself. For example, squeeze arrows on a child-proof bottle indicate specific pressure points required to disengage a safety mechanism.</p>
+            <p class="is-size-7">Specifies <em>how</em> to contact the part — e.g., squeeze arrows indicating exact pressure points on a child-proof cap.</p>
           </div>
         </div>
         <div class="column is-one-third">
@@ -296,7 +296,7 @@
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 03</p>
             <h3 class="title is-5 mb-2">Action Directional Information</h3>
-            <p class="is-size-7">Imposes constraints on manipulation execution by restricting the robot's motion space. Examples include CW/CCW rotation arrows on a bottle cap or "PUSH"/"PULL" labels on a door handle.</p>
+            <p class="is-size-7">Constrains motion direction — e.g., CW/CCW arrows on a bottle cap or "PUSH"/"PULL" on a door.</p>
           </div>
         </div>
         <div class="column is-one-third">
@@ -307,7 +307,7 @@
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 04</p>
             <h3 class="title is-5 mb-2">Procedural Guidance Information</h3>
-            <p class="is-size-7">Specifies the required sequence for multi-step operations. Labels such as "Rotate handle and Pull door" define the requisite order of actions that must be followed to complete the task.</p>
+            <p class="is-size-7">Defines the required action sequence — e.g., "Rotate handle, then Pull door."</p>
           </div>
         </div>
         <div class="column is-one-third">
@@ -318,7 +318,7 @@
             </div>
             <p class="is-size-7 has-text-grey mb-1" style="font-weight:600; letter-spacing:1px;">TYPE 05</p>
             <h3 class="title is-5 mb-2">Target Disambiguation Information</h3>
-            <p class="is-size-7">Resolves ambiguity when multiple candidate parts afford interaction. For example, if several drawers are present but only the top drawer is marked, the guide specifies the correct target.</p>
+            <p class="is-size-7">Resolves which part to act on when multiple candidates exist — e.g., a marked drawer among several.</p>
           </div>
         </div>
       </div>
@@ -471,14 +471,28 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="section-title">Experimental Insights</h2>
-      <div class="content-box">
-        <div class="content is-size-6 has-text-justified">
-          <ul>
-            <li><strong>Perception Bottleneck:</strong> Models struggle to ground directional and procedural information from raw visual input alone.</li>
-            <li><strong>Language as a Proxy:</strong> Performance jumps significantly when guides are provided as text (LI-VLA), showing the action policy itself is robust.</li>
-            <li><strong>Visual Distraction:</strong> For smaller backbones, on-object guides can act as visual distractors, leading to a performance drop.</li>
-          </ul>
+      <h2 class="section-title">Key Findings</h2>
+      <div class="columns">
+        <div class="column">
+          <div style="background:white; border-radius:14px; padding:1.8rem; box-shadow:0 8px 24px rgba(0,0,0,0.06); border-top:4px solid #e74c3c; height:100%;">
+            <p style="font-size:2rem; margin-bottom:0.5rem;">👁️</p>
+            <p class="title is-6 mb-2" style="color:#e74c3c;">Perception Bottleneck</p>
+            <p class="is-size-6 has-text-grey-dark">VLA models fail to ground directional and procedural guides from raw visual input alone.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div style="background:white; border-radius:14px; padding:1.8rem; box-shadow:0 8px 24px rgba(0,0,0,0.06); border-top:4px solid #27ae60; height:100%;">
+            <p style="font-size:2rem; margin-bottom:0.5rem;">💬</p>
+            <p class="title is-6 mb-2" style="color:#27ae60;">Language as a Proxy</p>
+            <p class="is-size-6 has-text-grey-dark">Providing guides as text (LI-VLA) boosts success by up to <strong>+24.3%</strong> — the action policy itself is capable.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div style="background:white; border-radius:14px; padding:1.8rem; box-shadow:0 8px 24px rgba(0,0,0,0.06); border-top:4px solid #f39c12; height:100%;">
+            <p style="font-size:2rem; margin-bottom:0.5rem;">⚠️</p>
+            <p class="title is-6 mb-2" style="color:#f39c12;">Visual Distraction</p>
+            <p class="is-size-6 has-text-grey-dark">For smaller models, on-object guides act as visual distractors and can hurt performance.</p>
+          </div>
         </div>
       </div>
     </div>
