@@ -222,10 +222,10 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="content-box">
-        <h2 class="title is-3 has-text-centered">TL;DR</h2>
-        <p class="is-size-5 has-text-centered" style="line-height:1.8; color:#444; max-width:780px; margin:0 auto;">
-          Robots operating in human environments must interpret <strong>in-situ guides</strong> — text and symbols physically embedded on objects (e.g. "PULL", "Squeeze and Turn"). We introduce <strong>INSIGHT Bench</strong>, the first benchmark that formalizes this capability by linking visual guides to guide-conditioned physical constraints. Our evaluation shows that current VLA models largely <strong>fail to ground in-situ guides visually</strong>, but succeed when the same information is given as language — exposing a critical perception gap.
-        </p>
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content is-size-6 has-text-justified">
+          Humans intuitively rely on text and symbols inscribed on objects (e.g. "PULL", "Squeeze and Turn") to perform tasks safely and correctly. In contrast, vision-language-action models excel at following external language commands, but remain largely unaware of this object-centric information. This capability is essential for reliable robotic operation, yet progress remains unmeasured due to the absence of standardized benchmarks. To address this gap, we introduce <strong>INSIGHT Bench</strong>, a benchmark that formalizes the task of <em>"in-situ guide grounding"</em>. INSIGHT Bench provides a comprehensive taxonomy that evaluates how agents utilize diverse guide information, including action-direction cues and procedural instructions. It also includes a scalable simulation framework that procedurally generates tasks and programmatically links each visual guide to its corresponding physical constraint. We release both the benchmark and the resulting trajectory dataset to support future research. Our evaluation of recent VLA models reveals a critical limitation: their ability to ground in-situ guides is inconsistent and strongly dependent on the type of information. While models succeed on some guide categories, they frequently fail on others. However, performance improves substantially when the same information is provided as language instructions, indicating that in-situ guides could contribute to manipulation performance if VLAs were capable of interpreting them. These findings underscore the need for further research on understanding and grounding in-situ guides.
+        </div>
       </div>
     </div>
   </section>
